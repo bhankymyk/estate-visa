@@ -1,7 +1,10 @@
+import React from 'react';
+import { useSidebar } from './SidebarContext';
 import { useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
   const location = useLocation();
+  const { isOpen, toggleSidebar } = useSidebar();
 
   const menuItems = [
     { name: 'Overview', path: '/overview', icon: '/assets/icons/overview.svg' },
@@ -15,18 +18,18 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-64 h-screen bg-white">
-      <div className="flex flex-col items-center py-6 lg:ml-0 ml-[7px]">
-        {/* Logo */}
+    <div className={`fixed top-0 left-0 w-64 h-full bg-white transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+       <button onClick={toggleSidebar} className="absolute top-4 right-4 hidden">
+        <img src="/assets/icons/close.svg" alt="Close" className="w-6 h-6" />
+      </button>
+      <div className="flex flex-col items-center py-6">
         <img src="/assets/icons/logo.svg" alt="Logo" className="mb-8" />
-
-        {/* Menu Items */}
         <ul className="flex flex-col w-full">
           {menuItems.map((item) => (
             <li key={item.name}>
               <a
                 href={item.path}
-                className={`flex items-center px-4 py-4 text-gray-700 hover:bg-[#E3DBFF] hover:text-[#3944BC]  font-medium text-base ${
+                className={`flex items-center px-4 py-4 text-gray-700 hover:bg-[#E3DBFF] hover:text-[#3944BC] font-medium text-base ${
                   location.pathname === item.path ? 'bg-[#E3DBFF] text-blue-800' : ''
                 }`}
               >

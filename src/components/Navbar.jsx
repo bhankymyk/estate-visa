@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useSidebar } from "./SidebarContext";
 
 const Navbar = () => {
+  const { toggleSidebar } = useSidebar();
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
   const toggleProfileDropdown = () => {
@@ -9,6 +11,16 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center px-6 py-4 bg-white  border-b-2 border-l-2">
+            <button
+        onClick={toggleSidebar}
+        className="text-white bg-gray-200 rounded lg:hidden sm:block mr-5"
+      >
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  <path   
+ d="M3.5 2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h9a.5.5 0 0 1 .5-.5v-1a.5.5 0 0 1-.5-.5h-9zm0 5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h9a.5.5 0 0 1 .5-.5v-1a.5.5 0 0 1-.5-.5h-9zm0 5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h9a.5.5 0 0 1 .5-.5v-1a.5.5 0 0 1-.5-.5h-9z"/>
+</svg>
+      </button>
+
       {/* Search Bar */}
       <div className="flex items-center bg-gray-100 rounded-lg p-2 w-1/3">
         <svg
@@ -33,9 +45,9 @@ const Navbar = () => {
 
       <div className="flex gap-5">
         <div className="relative">
-          <div className="p-3 rounded-full bg-purple-100 cursor-pointer">
+          <div className="p-3 rounded-full bg-purple-100 cursor-pointer lg:mt-0 mt-3 lg:ml-0 ml-3">
             <svg
-              className="w-6 h-6 text-black"
+              className="w-6 h-6  text-black"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
