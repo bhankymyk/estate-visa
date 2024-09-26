@@ -23,7 +23,7 @@ const StatusTable = () => {
       <table className="w-full border-collapse ">
         <thead>
           <tr className="bg-[#E3DBFF] text-base font-bold ">
-            <th className="p-5 ">
+            <th className="lg:p-5 p-4">
               <input type="checkbox" className="form-checkbox" />
             </th>
             <th className="p-2  ">Gate Name</th>
@@ -37,14 +37,14 @@ const StatusTable = () => {
               key={gate.id}
               className={`text-center ${index % 2 === 0 ? "bg-white" : "bg-[#E3DBFF]"}`}
             >
-              <td className="p-5">
+              <td className="lg:p-5 p-4">
                 <input type="checkbox" className="form-checkbox" />
               </td>
-              <td className="p-5">
+              <td className="lg:p-5 p-4">
                 <div className="font-medium text-lg">{gate.name}</div>
                 <div className="text-base font-normal">{gate.description}</div>
               </td>
-              <td className="p-5">
+              <td className="lg:p-5 p-4">
                 <span
                   className={`px-2 py-1 text-sm font-bold ${
                     gate.status === "Open" ? "text-green-800" : "text-red-800"
@@ -53,7 +53,7 @@ const StatusTable = () => {
                   {gate.status}
                 </span>
               </td>
-              <td className="p-5 flex justify-center">
+              <td className="lg:p-5 p-4 flex justify-center">
                 <div className="flex space-x-5 ">
                   <button className="text-blue-600 hover:text-blue-800">
                     <svg
