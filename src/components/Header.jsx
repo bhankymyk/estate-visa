@@ -1,19 +1,39 @@
 import React, { useState } from "react";
+import AddNewModal from "./AddNewModal";
+import EditModal from "./EditModal";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const [isAddNewGateOpen, setIsAddNewGateModalOpen] = useState(false);
+  const openAddNewGateModal = () => setIsAddNewGateModalOpen(true);
+  const closeAddNewGateModal = () => setIsAddNewGateModalOpen(false);
+
+  const [isEditOpen, setIsEditModalOpen] = useState(false);
+  const openEditModal = () => setIsEditModalOpen(true);
+  const closeEditModal = () => setIsEditModalOpen(false);
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
   return (
     <div className="flex justify-between items-center p-4 bg-white  border-2">
       <h1 className="text-4xl font-bold text-gray-800">Gates</h1>
       <div className="flex space-x-4">
-        <button className="flex items-center px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-900">
+        <button
+          onClick={openAddNewGateModal}
+          className="flex items-center px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-900"
+        >
           <span className="mr-2">+</span>
           Add New Gate
         </button>
+        {isAddNewGateOpen && (
+          <AddNewModal
+            isOpen={isAddNewGateOpen}
+            onClose={closeAddNewGateModal}
+          />
+        )}
         <div className="div">
           <button
             onClick={toggleDropdown}
@@ -68,7 +88,10 @@ const Header = () => {
           )}
         </div>
 
-        <button className="flex items-center px-4 py-2 border rounded-lg border-blue-700 text-blue-700">
+        <button
+          onClick={openEditModal}
+          className="flex items-center px-4 py-2 border rounded-lg border-blue-700 text-blue-700"
+        >
           <svg
             width="16"
             className="w-4 h-4 mr-2"
@@ -87,6 +110,9 @@ const Header = () => {
           </svg>
           Download Table
         </button>
+        {isEditOpen && (
+          <EditModal isOpen={isEditOpen} onClose={closeEditModal} />
+        )}
       </div>
     </div>
   );

@@ -4,14 +4,14 @@ const Sidebar = () => {
   const location = useLocation();
 
   const menuItems = [
-    { name: 'Overview',  icon: '/assets/icons/overview.svg' },
-    { name: 'Occupants',  icon: '/assets/icons/occupants.svg' },
-    { name: 'Sub-Occupants',  icon: '/assets/icons/sub-occupants.svg' },
-    { name: 'Houses', icon: '/assets/icons/houses.svg' },
+    { name: 'Overview', path: '/overview', icon: '/assets/icons/overview.svg' },
+    { name: 'Occupants', path: '/occupants', icon: '/assets/icons/occupants.svg' },
+    { name: 'Sub-Occupants', path: '/sub-occupants', icon: '/assets/icons/sub-occupants.svg' },
+    { name: 'Houses', path: '/houses', icon: '/assets/icons/houses.svg' },
     { name: 'Gates', path: '/gates', icon: '/assets/icons/gate.svg' },
-    { name: 'Messages',  icon: '/assets/icons/message.svg' },
-    { name: 'Meetings',  icon: '/assets/icons/meetings.svg' },
-    { name: 'Service Request',  icon: '/assets/icons/service.svg' },
+    { name: 'Messages', path: '/messages', icon: '/assets/icons/message.svg' },
+    { name: 'Meetings', path: '/meetings', icon: '/assets/icons/meetings.svg' },
+    { name: 'Service Request', path: '/service-request', icon: '/assets/icons/service.svg' },
   ];
 
   return (
@@ -27,7 +27,7 @@ const Sidebar = () => {
               <a
                 href={item.path}
                 className={`flex items-center px-4 py-4 text-gray-700 hover:bg-[#E3DBFF] hover:text-[#3944BC]  font-medium text-base ${
-                  location === item.path ? 'bg-[#E3DBFF] text-[#3944BC]' : ''
+                  location.pathname === item.path ? 'bg-[#E3DBFF] text-blue-800' : ''
                 }`}
               >
                 <img src={item.icon} alt={`${item.name} icon`} className="w-6 h-6 mr-3" />

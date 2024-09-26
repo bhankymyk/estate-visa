@@ -7,7 +7,8 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Gate />} />
+          {/* <Route path="/" element={<Gate />} /> */}
+          <Route path="/gates" element={<Gate />} />
         </Routes>
       </Router>
     </div>
