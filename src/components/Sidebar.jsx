@@ -18,7 +18,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className={`fixed top-0 left-0 w-64 h-full bg-white transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+    <div className={`fixed top-0 left-0 w-64 h-screen bg-white transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
        <button onClick={toggleSidebar} className="absolute top-4 right-4 hidden">
         <img src="/assets/icons/close.svg" alt="Close" className="w-6 h-6" />
       </button>

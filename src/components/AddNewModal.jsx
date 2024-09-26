@@ -28,7 +28,7 @@ export default function AddNewModal({ isOpen, onClose }) {
           aria-hidden="true"
           className="fixed top-0 right-0 z-50 flex justify-center items-center w-full h-full overflow-y-auto overflow-x-hidden bg-black bg-opacity-50"
         >
-          <div className="relative p-4 max-w-[40rem] max-h-full w-[900px]">
+          <div className="relative p-4 max-w-[40rem] max-h-full ">
             <div className="relative bg-white rounded-lg shadow p-5">
               <div className="flex items-center justify-between rounded">
                 <h2 className="text-xl font-bold">Add New Gate</h2>
