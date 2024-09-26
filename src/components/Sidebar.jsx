@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   return (
     <div className="w-64 h-screen bg-white">
-      <div className="flex flex-col items-center py-6">
+      <div className="flex flex-col items-center py-6 lg:ml-0 ml-[7px]">
         {/* Logo */}
         <img src="/assets/icons/logo.svg" alt="Logo" className="mb-8" />
 

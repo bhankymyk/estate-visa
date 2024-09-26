@@ -19,7 +19,7 @@ const StatusTable = () => {
   
   
   return (
-    <div className="container mx-auto p-6 rounded-lg">
+    <div className="container mx-auto lg:p-6 p-2 rounded-lg">
       <table className="w-full border-collapse ">
         <thead>
           <tr className="bg-[#E3DBFF] text-base font-bold ">
@@ -161,7 +161,7 @@ const StatusTable = () => {
         </tbody>
       </table>
 
-      <div className="flex items-center justify-between bg-white p-5">
+      <div className="flex items-center justify-between bg-white p-5 lg:px-5 px-1 ">
         <div className="flex space-x-2">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -199,7 +199,7 @@ const StatusTable = () => {
             <option>25</option>
             <option>50</option>
           </select>
-          <span className="ml-5">entries</span>
+          {/* <span className="ml-5">entries</span> */}
         </div>
       </div>
     </div>

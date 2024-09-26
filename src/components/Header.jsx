@@ -18,12 +18,12 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center p-4 bg-white  border-2">
-      <h1 className="text-4xl font-bold text-gray-800">Gates</h1>
+    <div className="flex  lg:flex-row flex-col justify-between items-center p-4 bg-white  border-2">
+      <h1 className="lg:text-4xl  text-xl font-bold text-gray-800">Gates</h1>
       <div className="flex space-x-4">
         <button
           onClick={openAddNewGateModal}
-          className="flex items-center px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-900"
+          className="flex items-center lg:px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-900 whitespace-nowrap lg:text-lg text-xs px-1"
         >
           <span className="mr-2">+</span>
           Add New Gate
@@ -90,7 +90,7 @@ const Header = () => {
 
         <button
           onClick={openEditModal}
-          className="flex items-center px-4 py-2 border rounded-lg border-blue-700 text-blue-700"
+          className="flex items-center lg:px-4 py-2 border rounded-lg border-blue-700 text-blue-700 whitespace-nowrap lg:text-lg text-xs px-1"
         >
           <svg
             width="16"
